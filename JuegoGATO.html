@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="estilo.css">
+        <title>Juego GATO</title>
+    </head>
+
+    <body>
+        
+        <h1>¿QUIERES JUGAR?</h1>
+
+        
+        <div class="tabla">
+            <div class="c1"></div>
+            <div class="c2"></div>
+            <div class="c3"></div>
+            <div class="c4"></div>
+            <div class="c5"></div>
+            <div class="c6"></div>
+            <div class="c7"></div>
+            <div class="c8"></div>
+            <div class="c9"></div>
+        </div>
+
+        <div class="breset">
+            <button onclick="reset()">Reiniciar</button>
+        </div>
+    
+
+        <script>
+            var simbolo = "X";
+
+            document.querySelectorAll(".tabla div").forEach(Element => {
+                Element.addEventListener("click", () => {
+                    if(Element.innerHTML === ""){
+                        Element.innerHTML = simbolo
+                        simbolo = simbolo === "X" ? "O" : "X";
+                    }
+                });
+            });
+
+            function reset(){
+                document.querySelectorAll(".tabla div").forEach((Element) => {
+                    Element.innerHTML = "";
+                });
+            }
+
+        </script>
+
+        <script type="text/javascript">
+            (function(d, t) {
+                var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                v.onload = function() {
+                window.voiceflow.chat.load({
+                    verify: { projectID: '6729af14262108150591d600' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production'
+                });
+                }
+                v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+            })(document, 'script');
+        </script>
+        
+    </body>
+</html>
+
+
